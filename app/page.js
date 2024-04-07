@@ -1,4 +1,31 @@
+"use client";
+
+import { useAuthContext } from "@/context/AuthContext";
+import { useState } from "react";
+import Swal from "sweetalert2";
+
 export default function Home() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { login } = useAuthContext();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (
+      email.toLowerCase() === "admin@admin.com" &&
+      password.toLowerCase() === "admin"
+    ) {
+      login({ email, password });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Incorrect Login",
+        text: "Click on email and password",
+      });
+    }
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-yellow-300">
       <div className="h-[500px] bg-white w-11/12 sm:w-[450px] rounded-2xl p-8 flex justify-between flex-col">
@@ -12,9 +39,12 @@ export default function Home() {
             Enter your credentials to access your account
           </p>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="flex flex-col justify-start gap-2 mt-2">
-            <label htmlFor="email" className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['admin@admin.com'] hover:after:underline">
+            <label
+              htmlFor="email"
+              className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['admin@admin.com'] hover:after:underline"
+            >
               Email
             </label>
             <input
@@ -23,10 +53,15 @@ export default function Home() {
               id="email"
               placeholder="Enter your email"
               className="login-input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="flex flex-col justify-start gap-2 mt-2">
-            <label htmlFor="password" className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['admin'] hover:after:underline">
+            <label
+              htmlFor="password"
+              className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['admin'] hover:after:underline"
+            >
               Password
             </label>
             <input
@@ -35,6 +70,8 @@ export default function Home() {
               id="password"
               placeholder="Enter your password"
               className="login-input"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button
