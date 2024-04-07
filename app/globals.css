@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .login-input {
+    @apply border placeholder:text-xs placeholder:text-gray-300 p-2 h-11 rounded focus:outline-orange-500 focus:caret-orange-500
+  }
+}
