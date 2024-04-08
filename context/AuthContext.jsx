@@ -11,7 +11,14 @@ export const useAuthContext = () => {
 
 const AuthContextProvider = ({children}) => {
 
-    const [user, setUser] = useState(JSON.parse(sessionStorage.getItem("user")) || null)
+    const [user, setUser] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const storedUser = sessionStorage.getItem("user")
+            return storedUser ? JSON.parse(storedUser) : null
+        } else {
+            return null
+        }
+    })
 
     const router = useRouter()
 
@@ -25,14 +32,18 @@ const AuthContextProvider = ({children}) => {
     }
 
     useEffect(() => {
-        sessionStorage.setItem("user", JSON.stringify(user))
+        if (user) {
+            sessionStorage.setItem("user", JSON.stringify(user))
+        } else {
+            sessionStorage.removeItem("user")
+        }
     }, [user])
     
 
     const values = {login, logout}
-  return (
-    <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
-  )
+    return (
+        <AuthContext.Provider value={values}>{children}</AuthContext.Provider>
+    )
 }
 
 export default AuthContextProvider

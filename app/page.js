@@ -31,11 +31,11 @@ export default function Home() {
       <div className="h-[500px] bg-white w-11/12 sm:w-[450px] rounded-2xl p-8 flex justify-between flex-col">
         <div className="flex justify-center items-center gap-1">
           <span className="h-[40px] w-[5px] bg-orange-500"></span>
-          <h1 className="uppercase font-semibold text-3xl">furkan store</h1>
+          <h1 className="uppercase font-semibold md:text-3xl text-2xl">furkan store</h1>
         </div>
         <div className="text-center m-2">
-          <h3 className="uppercase text-2xl font-semibold">sign in</h3>
-          <p className="text-gray-400 text-sm">
+          <h3 className="uppercase md:text-2xl text-xl font-semibold">sign in</h3>
+          <p className="text-gray-400 md:text-sm text-xs">
             Enter your credentials to access your account
           </p>
         </div>
@@ -81,8 +81,8 @@ export default function Home() {
             sign in
           </button>
           <p className="text-center">
-            <span className="text-gray-600 text-sm">Forgot your password?</span>
-            <span className="text-orange-500 underline text-xs ml-1">
+            <span className="text-gray-600 md:text-sm text-xs">Forgot your password?</span>
+            <span className="text-orange-500 underline md:text-xs text-[0.7rem] ml-1">
               Reset Password
             </span>
           </p>
