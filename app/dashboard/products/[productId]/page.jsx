@@ -11,9 +11,9 @@ const ProductDetail = ({ params }) => {
 
   const filter = product.filter((item) => item.id === Number(productId));
 
-  const { thumbnail, title, description, category, price, images } = filter[0];
+  const { title, description, category, price, images } = filter[0];
 
-  const [selectedImage, setselectedImage] = useState(thumbnail);
+  const [selectedImage, setselectedImage] = useState(images[0]);
 
   const router = useRouter();
 
@@ -30,7 +30,7 @@ const ProductDetail = ({ params }) => {
               />
             </div>
             <div className="grid grid-cols-4 gap-4 row-span-1">
-              {images.slice(0, images.length - 1).map((item, index) => (
+              {images.slice(0, ((images.length >= 4) ? 4 : (images.length))).map((item, index) => (
                 <div key={index} onClick={() => setselectedImage(item)}>
                   <img
                     src={item}
@@ -60,13 +60,13 @@ const ProductDetail = ({ params }) => {
                 className="border p-2 rounded-lg text-white bg-gray-500"
                 onClick={() => router.back()}
               >
-                Geri
+                Go Back
               </button>
               <button
                 className="border p-2 rounded-lg text-white bg-orange-500"
                 onClick={() => router.push("/dashboard")}
               >
-                Ana Sayfaya Dön
+                Go Home
               </button>
             </div>
           </div>

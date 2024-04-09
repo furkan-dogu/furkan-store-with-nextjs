@@ -44,3 +44,42 @@ export const testimonials = [
         quote: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati ",
     },
 ];
+
+export const team = [
+    {
+        id: 1,
+        avatar: "https://avatars.githubusercontent.com/u/140394399?v=4",
+        name: "Furkan Doğu",
+        title: "Frontend Developer",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, adipisci.",
+        linkedin: "https://www.linkedin.com/in/furkan-dogu/",
+        github: "https://github.com/furkan-dogu",
+    },
+    {
+        id: 2,
+        avatar: "https://avatars.githubusercontent.com/u/144271528?v=4",
+        name: "Arif Canbaz",
+        title: "Full Stack Developer",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, adipisci.",
+        linkedin: "https://www.linkedin.com/in/arif-canbaz-765ba0292/",
+        github: "https://github.com/arifcanbaz",
+    },
+    {
+        id: 3,
+        avatar: "https://avatars.githubusercontent.com/u/144005455?v=4",
+        name: "Mehmet Doğan",
+        title: "Frontend Developer",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, adipisci.",
+        linkedin: "https://www.linkedin.com/in/mehmet-do%C4%9Fan-1911a2222/",
+        github: "https://github.com/Mehmet-github06",
+    },
+    {
+        id: 4,  
+        avatar: "https://avatars.githubusercontent.com/u/144238207?v=4",
+        name: "Gökhan Yıldız",
+        title: "Frontend Developer",
+        desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque, adipisci.",
+        linkedin: "https://www.linkedin.com/in/gyildizz/",
+        github: "https://github.com/YildizGokhan",
+    },
+]
