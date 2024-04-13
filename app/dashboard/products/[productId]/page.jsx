@@ -9,7 +9,9 @@ const ProductDetail = ({ params }) => {
 
   const { product } = useProductContext();
 
-  const filter = product.filter((item) => item.id === Number(productId));
+  const filter = product.filter((item) => item._id === productId);
+
+  console.log(filter);
 
   const { title, description, category, price, images } = filter[0];
 
@@ -44,13 +46,13 @@ const ProductDetail = ({ params }) => {
           </div>
           <div className="w-full lg:5/12 flex flex-col justify-evenly p-4">
             <div className="pt-3 ml-4 mr-2 mb-3">
-              <h3 className="text-lg text-gray-900">{title}</h3>
+              <h3 className="text-lg text-gray-900 capitalize">{title}</h3>
               <p className="mt-1 text-gray-400">{description}</p>
             </div>
             <div className="flex mt-2 ml-4 mr-2 pt-3">
               <div>
                 <span className="block text-gray-900 capitalize">
-                  Category : {category}
+                  Category : {category.name}
                 </span>
                 <span className="block text-sm">Price : {price} $</span>
               </div>

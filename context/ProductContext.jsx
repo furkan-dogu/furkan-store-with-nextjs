@@ -15,10 +15,10 @@ const ProductContextProvider = ({ children }) => {
 
   const getProduct = async () => {
     try {
-      const { data } = await axios.get(
-        `https://dummyjson.com/products/search?q=${search}`
+      const {data} = await axios.get(
+        `https://productapi-6sri.onrender.com/products?search=${search}`
       );
-      setProduct(data.products);
+      setProduct(data.data);
     } catch (error) {
       console.log(error);
     } 

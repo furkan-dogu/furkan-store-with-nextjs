@@ -13,7 +13,7 @@ const Products = () => {
       <SearchInput />
       <div className='mt-6 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 xl:gap-y-8'>
         {product.map((item) => (
-          <ProductCard key={item.id} item={item} />
+          <ProductCard key={item._id} item={item} />
         ))}
       </div>
     </div>
