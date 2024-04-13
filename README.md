@@ -31,7 +31,7 @@ In the project I created with Next JS, after entering the login information, you
 - React
 - Axios for API requests
 - Next JS
-- [DummyJSON API](https://dummyjson.com/) for products data
+- [Product API](https://github.com/furkan-dogu/ProductAPI) for products data
 - Icons from [React Icons](https://react-icons.github.io/react-icons/)
 - Styling with [Tailwind](https://tailwindcss.com/) and CSS 
 - [Sweetalert2](https://sweetalert2.github.io/) for alert 
@@ -96,7 +96,3 @@ Furkan Store (folder)
 ## Compatibility
 
 The project is compatible with both wide-screen computers and mobile devices.
-
-## Acknowledgments
-
-Products data provided by [DummyJSON](https://dummyjson.com/)
