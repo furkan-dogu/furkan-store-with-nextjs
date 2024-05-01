@@ -16,7 +16,7 @@ const ProductContextProvider = ({ children }) => {
   const getProduct = async () => {
     try {
       const {data} = await axios.get(
-        `https://productapi-6sri.onrender.com/products?search=${search}`
+        `https://product-api-kappa.vercel.app/products?search=${search}`
       );
       setProduct(data.data);
     } catch (error) {
