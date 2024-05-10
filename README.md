@@ -22,8 +22,8 @@ In the project I created with Next JS, after entering the login information, you
 
 ## Backend
 
-- [Codes](https://github.com/furkan-dogu/ProductAPI)
-- [Live](https://product-api-kappa.vercel.app/)
+- [Codes](https://github.com/furkan-dogu/ProductAPI-2)
+- [Live](https://product-api-2.vercel.app/)
 
 ## Features
 
@@ -34,12 +34,13 @@ In the project I created with Next JS, after entering the login information, you
 ## Technologies Used
 
 - React
+- Redux
 - Axios for API requests
 - Next JS
-- [Product API](https://github.com/furkan-dogu/ProductAPI) for products data
+- [Product API 2](https://github.com/furkan-dogu/ProductAPI-2) for products data
 - Icons from [React Icons](https://react-icons.github.io/react-icons/)
 - Styling with [Tailwind](https://tailwindcss.com/) and CSS 
-- [Sweetalert2](https://sweetalert2.github.io/) for alert 
+- [React-Toastify](https://fkhadra.github.io/react-toastify/introduction/) for alert 
 
 ## Usage
 
@@ -77,9 +78,20 @@ Furkan Store (folder)
 │    ├── AuthContext.jsx
 │    └── ProductContext.jsx 
 ├── helpers
-│    └── data.js 
+│    ├── data.js
+│    └── ToastNotify.js 
+├── hooks
+│    ├── useAuthCalls.jsx
+│    ├── useAxios.jsx
+│    └── useProductCalls.jsx 
 ├── puclic
 │    └── [images] 
+├── redux
+│    ├── features
+│    │     ├── authSlice.jsx
+│    │     └── productSlice.jsx
+│    ├── provider.jsx
+│    └── store.jsx
 ├── .gitignore
 ├── jsconfig.json
 ├── next.config.mjs
