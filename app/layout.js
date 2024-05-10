@@ -1,7 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import AuthContextProvider from "@/context/AuthContext";
-import ProductContextProvider from "@/context/ProductContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Providers } from "@/redux/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +20,10 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/furkan-logo.jpg" sizes="any" />
       </head>
       <body className={inter.className}>
-        <AuthContextProvider>
-          <ProductContextProvider>
-            {children}
-          </ProductContextProvider>
-        </AuthContextProvider>
+        <Providers>
+          {children}
+          <ToastContainer />
+        </Providers>
       </body>
     </html>
   );

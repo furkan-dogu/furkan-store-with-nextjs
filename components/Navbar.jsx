@@ -8,7 +8,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import { usePathname } from 'next/navigation'
 import { LuLogOut } from "react-icons/lu";
-import { useAuthContext } from '@/context/AuthContext'
+import useAuthCalls from '@/hooks/useAuthCalls'
 
 const navigation = [
   {
@@ -30,7 +30,7 @@ const navigation = [
 
 const Navbar = () => {
 
-  const {logout} = useAuthContext()
+  const { logout } = useAuthCalls()
 
   const [show, setShow] = useState(false)
 

@@ -1,29 +1,23 @@
 "use client";
 
-import { useAuthContext } from "@/context/AuthContext";
+import useAuthCalls from "@/hooks/useAuthCalls";
 import { useState } from "react";
-import Swal from "sweetalert2";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [info, setInfo] = useState({
+    email: "",
+    password: "",
+  });
 
-  const { login } = useAuthContext();
+  const handleChange = (e) => {
+    setInfo({ ...info, [e.target.name]: e.target.value });
+  };
+
+  const { login } = useAuthCalls();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (
-      email.toLowerCase() === "admin@admin.com" &&
-      password.toLowerCase() === "admin"
-    ) {
-      login({ email, password });
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Incorrect Login",
-        text: "Click on email and password",
-      });
-    }
+    login(info);   
   };
 
   return (
@@ -53,8 +47,8 @@ export default function Home() {
               id="email"
               placeholder="Enter your email"
               className="login-input"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={info.email}
+              onChange={handleChange}
             />
           </div>
           <div className="flex flex-col justify-start gap-2 mt-2">
@@ -70,8 +64,8 @@ export default function Home() {
               id="password"
               placeholder="Enter your password"
               className="login-input"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={info.password}
+              onChange={handleChange}
             />
           </div>
           <button
