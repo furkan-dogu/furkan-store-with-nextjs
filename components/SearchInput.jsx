@@ -1,10 +1,8 @@
 "use client";
 
-import { useProductContext } from "@/context/ProductContext";
 import { IoIosSearch } from "react-icons/io";
 
-const SearchInput = () => {
-  const { search, setSearch } = useProductContext();
+const SearchInput = ({ search, setSearch }) => {
 
   return (
     <div>

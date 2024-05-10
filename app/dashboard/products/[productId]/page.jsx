@@ -1,17 +1,15 @@
 "use client";
 
-import { useProductContext } from "@/context/ProductContext";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 const ProductDetail = ({ params }) => {
   const { productId } = params;
 
-  const { product } = useProductContext();
+  const { products } = useSelector(state => state.product)
 
-  const filter = product.filter((item) => item._id === productId);
-
-  console.log(filter);
+  const filter = products.filter((item) => item._id === productId);
 
   const { title, description, category, price, images } = filter[0];
 
