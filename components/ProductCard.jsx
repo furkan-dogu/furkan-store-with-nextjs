@@ -8,9 +8,9 @@ const ProductCard = ({item}) => {
     const router = useRouter()
 
   return (
-    <div className="cursor-pointer" onClick={() => router.push(`/dashboard/products/${_id}`)}>
-        <div className="w-full rounded-md lg:h-80 bg-gray-200 hover:opacity-75">
-            <img src={images[0]} className="h-48 w-full lg:h-full lg:w-full" />
+    <div className="cursor-pointer border border-gray-300 rounded-lg p-2" onClick={() => router.push(`/dashboard/products/${_id}`)}>
+        <div className="w-full rounded-md lg:h-72 bg-gray-200 hover:opacity-75">
+            <img src={images[0]} className="h-40 w-full lg:h-full lg:w-full rounded-md" />
         </div>
         <div className="mt-4 flex justify-between">
             <div className="flex-1">

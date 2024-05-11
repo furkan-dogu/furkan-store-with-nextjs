@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     loading: false,
     error: false,
-    products: []
+    products: [],
+    categories: []
 };
 
 const productSlice = createSlice({
@@ -23,13 +24,19 @@ const productSlice = createSlice({
             state.loading = false;
             state.error = false;
         },
+        getCategoriesSuccess: (state, { payload }) => {
+            state.categories = payload.data;
+            state.loading = false;
+            state.error = false;
+        }
     }
 })
 
 export const {
     fetchStart,
     fetchFail,
-    getProductsSuccess
+    getProductsSuccess,
+    getCategoriesSuccess
 } = productSlice.actions;
 
 export default productSlice.reducer;
