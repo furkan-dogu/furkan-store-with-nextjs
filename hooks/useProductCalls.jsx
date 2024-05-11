@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import useAxios from "./useAxios";
 import { toastErrorNotify } from "@/helpers/ToastNotify";
-import { fetchFail, fetchStart, getProductsSuccess, getCategoriesSuccess } from "@/redux/features/productSlice";
+import { fetchFail, fetchStart, getProductsSuccess, getCategoriesSuccess, getSingleProductSuccess } from "@/redux/features/productSlice";
 
 const useProductCalls = () => {
     const { axiosWithToken } = useAxios();
@@ -14,7 +14,7 @@ const useProductCalls = () => {
             dispatch(getProductsSuccess(data))
         } catch (error) {
             dispatch(fetchFail());
-            toastErrorNotify("Product data could not be accessed")
+            toastErrorNotify("Products data could not be accessed")
             console.log(error);
         }
     }
@@ -31,7 +31,19 @@ const useProductCalls = () => {
         }
     }
 
-    return { getProducts, getCategories }
+    const getSingleProduct = async (id) => {
+        dispatch(fetchStart());
+        try {
+            const { data } = await axiosWithToken(`/products/${id}`);
+            dispatch(getSingleProductSuccess(data))
+        } catch (error) {
+            dispatch(fetchFail());
+            toastErrorNotify("Product data could not be accessed")
+            console.log(error);
+        }
+    }
+
+    return { getProducts, getCategories, getSingleProduct }
 }
 
 export default useProductCalls
