@@ -37,7 +37,7 @@ export default function Home() {
           <div className="flex flex-col justify-start gap-2 mt-2">
             <label
               htmlFor="email"
-              className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['guess@site.com'] hover:after:underline"
+              className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['guest@site.com'] hover:after:underline"
             >
               Email
             </label>
@@ -54,7 +54,7 @@ export default function Home() {
           <div className="flex flex-col justify-start gap-2 mt-2">
             <label
               htmlFor="password"
-              className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['guess'] hover:after:underline"
+              className="cursor-pointer text-gray-500 hover:after:ml-2 hover:after:text-black hover:after:content-['guest'] hover:after:underline"
             >
               Password
             </label>
