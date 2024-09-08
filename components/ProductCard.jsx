@@ -3,14 +3,14 @@
 import { useRouter } from "next/navigation"
 
 const ProductCard = ({item}) => {
-    const {images, title, price, category, _id} = item
+    const {thumbnail, images, title, price, category, _id} = item
 
     const router = useRouter()
 
   return (
-    <div className="cursor-pointer border border-gray-300 rounded-lg p-2" onClick={() => router.push(`/dashboard/products/${_id}`)}>
+    <div className="cursor-pointer border border-gray-300 rounded-lg p-2 mx-auto sm:mx-0 max-w-60 w-full sm:max-w-96" onClick={() => router.push(`/dashboard/products/${_id}`)}>
         <div className="w-full rounded-md lg:h-72 bg-gray-200 hover:opacity-75">
-            <img src={images[0]} className="h-40 w-full lg:h-full lg:w-full rounded-md" />
+            <img src={thumbnail || images[0]} className="h-40 w-full lg:h-full lg:w-full rounded-md" />
         </div>
         <div className="mt-4 flex justify-between">
             <div className="flex-1">

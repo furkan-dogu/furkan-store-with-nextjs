@@ -26,15 +26,15 @@ const Products = () => {
   };
 
   const newProducts =
-    category.toLowerCase() === "all products"
-      ? products.filter(
-          (item) =>
-            item.title.toLowerCase().includes(search.toLowerCase())
+    category.toLocaleLowerCase() === "all products"
+      ? products.filter((item) =>
+          item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
         )
       : products.filter(
           (item) =>
-            item.category.name.toLowerCase() === category &&
-            item.title.toLowerCase().includes(search.toLowerCase())
+            item.category?.name?.toLocaleLowerCase() ===
+              category.toLocaleLowerCase() &&
+            item.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
         );
 
   return (
@@ -53,7 +53,7 @@ const Products = () => {
       </div>
       <SearchInput search={search} setSearch={setSearch} />
 
-      <div className="mt-6 grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 xl:gap-y-8">
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 xl:gap-y-8">
         {newProducts.map((item) => (
           <ProductCard key={item._id} item={item} />
         ))}

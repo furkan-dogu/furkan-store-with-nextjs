@@ -10,7 +10,7 @@ const useProductCalls = () => {
     const getProducts = async (search) => {
         dispatch(fetchStart());
         try {
-            const { data } = await axiosWithToken(`/products?limit=100&search=${search}`);
+            const { data } = await axiosWithToken(`/products?limit=200&search=${search}`);
             dispatch(getProductsSuccess(data))
         } catch (error) {
             dispatch(fetchFail());
